@@ -28,8 +28,8 @@
 </head>
 
 <body>
-	<label for="input">Input a text</label><br>
-	<input type="text" id="input">
+	<label for="in">Input a text</label><br>
+	<input type="text" id="in"><br>
 	<div class="flex-container" id="target">
 		<div class="cycler">row item 1</div>   
 		<div class="cycler">row item 2</div>  
@@ -38,22 +38,37 @@
 	
 	<p> Press the button to create an new element of type div and then add it to the container.</p>
 	<button onclick="makeNewDiv()">Add value</button>
-	
-	
+	<button onclick="get()">Get</button>
+	<button onclick="spin()">Spin</button>
 </body>
+
 <script>
 	function makeNewDiv(){
 		/* make the div and its text */
 		let element = document.createElement("div")
-		new_input = document.getElementById("input")
+		new_input = document.getElementById("in")
 		element.innerHTML = new_input.value
 		element.className = "cycler"
-
-
 		/* add it to the container */
-		let container = document.getElementById('target')
-		container.appendChild(element)
-		
+		let c = document.getElementById('target')
+		c.appendChild(element)		
+	}
+	function get(){
+		cyclerItems= document.getElementsByClassname("cycler")
+		length= cyclerItems.length
+		if (length > 0){
+			cyclerItems[len-1].remove()
+		}
+	}
+	function spin(){
+		cyclerItems= document.getElementsByClassname("cycler")
+		len= cyclerItems.length
+		if (len > 1){
+			removedItem = cyclerItems[len-1]
+			cyclerItems[len-1].remove()
+			let container = document.getElementById("target")
+			container.insertBefore(removedItem, container.firstChild)
+		}
 	}
 </script>
 </html>	
