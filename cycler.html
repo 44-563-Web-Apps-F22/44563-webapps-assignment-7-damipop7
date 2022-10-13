@@ -70,5 +70,19 @@
 			container.insertBefore(removedItem, container.firstChild)
 		}
 	}
+	function swap(){
+		cyclerItems= document.getElementsByClassname("cycler")
+		let container = document.getElementById("target")
+		a =Math.floor(Math.random() * cyclerItems.length)
+		b =Math.floor(Math.random() * cyclerItems.length)
+		innertext1 = document.getElementsByClassName("cycler")[a]
+		innertext2 = document.getElementsByClassName("cycler")[b]
+
+		if(cyclerItems.length > 1){
+			temp = innertext1.innerHTML
+			innertext1.innerHTML = innertext2.innerHTML
+			innertext2.innerHTML = temp
+		}
+	}
 </script>
 </html>	
